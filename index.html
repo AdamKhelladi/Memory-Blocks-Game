@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Blocks Game</title>
+
+    <!-- Render All Elements Normaly -->
+    <link rel="stylesheet" href="normalize.css"/>
+      
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Faster+One&family=Jomhuria&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Poppins:wght@200;400;700&family=Roboto:wght@100;300;400;500;700;900&family=Work+Sans:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main Template Css File -->
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="title">Memory Blocks Game</div>
+    <div class="control-button">
+      <span>Start Game</span>
+    </div>
+
+    <div class="container">
+      <div class="info-container">
+        <div class="name">
+          Hello <span></span>
+        </div>
+        <div class="tries">
+          Wrong Tries: <span>0</span>
+        </div>
+      </div>
+  
+      <div class="game-blocks">
+  
+        <div class="game-block" data-technology="css3">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/2.jpg" alt="css3">
+          </div>
+        </div>
+        <div class="game-block" data-technology="css3">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/2.jpg" alt="css3">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="php">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/3.jpg" alt="php">
+          </div>
+        </div>
+        <div class="game-block" data-technology="php">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/3.jpg" alt="php">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="cSharp">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/4.jpg" alt="cSharp">
+          </div>
+        </div>
+        <div class="game-block" data-technology="cSharp">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/4.jpg" alt="cSharp">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="python">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/5.jpg" alt="python">
+          </div>
+        </div>
+        <div class="game-block" data-technology="python">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/5.jpg" alt="python">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="vsc">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/6.jpg" alt="vsc">
+          </div>
+        </div>
+        <div class="game-block" data-technology="vsc">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/6.jpg" alt="vsc">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="github">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/7.jpg" alt="github">
+          </div>
+        </div>
+        <div class="game-block" data-technology="github">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/7.jpg" alt="github">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="git">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/8.jpg" alt="git">
+          </div>
+        </div>
+        <div class="game-block" data-technology="git">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/8.jpg" alt="git">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="nodejs">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/9.jpg" alt="nodejs">
+          </div>
+        </div>
+        <div class="game-block" data-technology="nodejs">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/9.jpg" alt="nodejs">
+          </div>
+        </div>
+  
+        <div class="game-block" data-technology="vuejs">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/10.jpg" alt="vuejs">
+          </div>
+        </div>
+        <div class="game-block" data-technology="vuejs">
+          <div class="face front"></div>
+          <div class="face back">
+            <img src="media/10.jpg" alt="vuejs">
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <!-- <div class="winning">Congratulations, you're doing great!</div> -->
+        <div class="again">Play Again</div>
+      </div>
+
+    </div>
+    <audio id="success" src="audio/success.m4a" preload="auto"></audio>
+    <audio id="fail" src="audio/fail.m4a" preload="auto"></audio>
+  
+    <script src="main.js"></script>
+  </body>
+
+</html>
+
