@@ -2,6 +2,8 @@
 
 let startGameBtn = document.querySelector(".control-button span");
 let username = document.querySelector(".name span");
+let gameContainer = document.querySelector(".container");
+let triesSpan = document.querySelector(".tries span");
 
 startGameBtn.addEventListener("click", startGame);
 window.addEventListener("keydown", (event) => {
@@ -71,7 +73,7 @@ function flipBlock(selectedBlock) {
   if (allFlippedBlocks.length === 2) {
     stopClicking();
     checkBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
-  }  
+  }
 }
 
 function stopClicking() {
@@ -83,6 +85,7 @@ function stopClicking() {
 }
 
 function checkBlocks(firstBlock, secondBlock) {
+  countFlippedBlocks();
   let tries = document.querySelector(".tries span");
 
   if (firstBlock.dataset.technology === secondBlock.dataset.technology) {
@@ -103,4 +106,75 @@ function checkBlocks(firstBlock, secondBlock) {
 
     document.querySelector("#fail").play();
   }
+}
+
+function countFlippedBlocks() {
+  let numOfFlippedBlocks = 2;
+
+  blocksArray.forEach((block) => {
+    if (block.classList.contains("has-match")) {
+      numOfFlippedBlocks++;
+    }
+  });
+  showResult(numOfFlippedBlocks);
+}
+
+function showResult(numOfFlippedBlocks) {
+  if (numOfFlippedBlocks === blocksArray.length) {
+    setTimeout(() => {
+
+      blocksContainer.remove();
+      winResult();
+      playAgainFunc();
+
+    }, duration);
+  } else if (triesSpan.innerHTML === "14") {
+
+    blocksContainer.remove();
+    loseResult();
+    playAgainFunc();
+
+  }
+}
+
+function playAgainFunc() {
+  document.querySelector(".again").addEventListener("click", () => {
+    location.reload();
+  });
+}
+
+function winResult() {
+  let resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+
+  let winDiv = document.createElement("div");
+  winDiv.className = "winning";
+  winDiv.innerHTML = "Congratulations, you're doing great!";
+
+  let playAgain = document.createElement("div");
+  playAgain.className = "again";
+  playAgain.innerHTML = "Play Again";
+
+  resultDiv.appendChild(winDiv);
+  resultDiv.appendChild(playAgain);
+
+  gameContainer.appendChild(resultDiv);
+}
+
+function loseResult() {
+  let resultDiv = document.createElement("div");
+  resultDiv.className = "result";
+
+  let loseDiv = document.createElement("div");
+  loseDiv.className = "lose";
+  loseDiv.innerHTML = "Game Over! You made 15 Wrong tries. Try again!";
+
+  let playAgain = document.createElement("div");
+  playAgain.className = "again";
+  playAgain.innerHTML = "Play Again";
+
+  resultDiv.appendChild(loseDiv);
+  resultDiv.appendChild(playAgain);
+
+  gameContainer.appendChild(resultDiv);
 }
