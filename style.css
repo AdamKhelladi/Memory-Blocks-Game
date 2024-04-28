@@ -46,17 +46,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   transition: var(--main-transition);
+}
+
+.control-button .msg,
+.control-button span {
+  color: white;
+  padding: 15px 22px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 6px;
+
+}
+
+.control-button .msg {
+  background-color: rgb(255, 0, 0);
+  font-size: 20px;
+  margin: -70px 0 20px;
 }
 
 .control-button span {
   background-color: var(--main-color);
-  color: white;
-  padding: 15px 22px;
   font-size: 25px;
-  font-weight: 600;
-  text-align: center;
-  border-radius: 6px;
   user-select: none;
   cursor: pointer;
   box-shadow: 0 0 10px #777;
@@ -179,11 +191,10 @@ body {
   padding: 20px;
   border-radius: 6px;
   border: 2px solid var(--main-color);
-
-  display: none;
 }
 
-.result .winning {
+.result .winning,
+.result .lose {
   width: fit-content;
   margin: 0 auto;
   color: var(--main-color);
@@ -196,8 +207,12 @@ body {
   line-height: 1.5;
 }
 
+.result .lose {
+  color: rgb(255, 28, 28);
+}
+
 .again {
-  margin: 30px auto;
+  margin: 30px auto 10px;
   width: fit-content;
   padding: 20px 30px;
   color: white;
@@ -234,6 +249,9 @@ body {
   }
   .game-blocks .game-block .front::before {
     font-size: 60px;
+  }
+  .control-button .msg {
+    font-size: 16px;
   }
 }
 
